@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useForm } from "react-hook-form";
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
@@ -7,12 +7,28 @@ import Preloader from '../Shared/Preloader';
 
 const Login = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
-    const [signInWithEmailAndPassword, user, loading, error,] = useSignInWithEmailAndPassword(auth);
-    const [signInWithGoogle, userGoogle, loadingGoogle] = useSignInWithGoogle(auth);
+    const [signInWithEmailAndPassword, user, userLoading, userError,] = useSignInWithEmailAndPassword(auth);
+    const [signInWithGoogle, userGoogle, loadingGoogle, googleError] = useSignInWithGoogle(auth);
 
-    // const navigate = useNavigate()
-    // const location = useLocation()
-    // let from = location.state?.from?.pathname || '/'
+    const navigate = useNavigate();
+    const location = useLocation();
+    let from = location.state?.from?.pathname || "/";
+
+
+    useEffect(() => {
+        if (user || userGoogle) {
+            navigate(from, { replace: true });
+        }
+    }, [user, userGoogle, from, navigate])
+
+
+    if (userLoading || loadingGoogle) {
+        return <Preloader></Preloader>
+    }
+    let loginErrorMessage
+    if (userError || googleError) {
+        loginErrorMessage = <h4 className='text-red-500 my-3'>{userError?.message || googleError?.message}</h4>
+    }
 
     const loginSubmit = data => {
         const email = data.email
@@ -20,11 +36,6 @@ const Login = () => {
         signInWithEmailAndPassword(email, password)
 
     }
-
-    if (loading || loadingGoogle) {
-        return <Preloader></Preloader>
-    }
-
     return (
         <div className='flex justify-center items-center py-20'>
             <div className="card w-96 bg-base-100 shadow-xl">
@@ -91,6 +102,8 @@ const Login = () => {
 
                         <input type="submit" value='Login' className='btn w-full max-w-xs btn-primary text-white' />
                     </form>
+
+                    {loginErrorMessage}
 
                     <p>Are you new to this portal? <Link className='text-secondary font-bold' to='/signup'>Sign Up</Link></p>
                     <div className="divider">OR</div>

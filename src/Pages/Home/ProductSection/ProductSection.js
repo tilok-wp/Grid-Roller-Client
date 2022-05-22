@@ -4,7 +4,7 @@ import Preloader from '../../Shared/Preloader';
 import Product from './Product';
 
 const ProductSection = () => {
-    const { data: products, isLoading } = useQuery('available', () => fetch(`http://localhost:5000/products?limit=6`).then(res => res.json()))
+    const { data: products, isLoading } = useQuery('products', () => fetch(`http://localhost:5000/product?limit=6`).then(res => res.json()))
 
     if (isLoading) {
         return <Preloader></Preloader>

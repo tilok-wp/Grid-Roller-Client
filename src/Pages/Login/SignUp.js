@@ -19,13 +19,14 @@ const SignUp = () => {
         await updateProfile({ displayName });
         console.log(email, password, displayName)
     }
+
+
     return (
         <div className='flex justify-center items-center py-20'>
             <div className="card w-96 bg-base-100 shadow-xl">
                 <div className="card-body">
                     <h2 className="text-3xl text-center font-bold">Login </h2>
                     <form onSubmit={handleSubmit(signupSubmit)}>
-
                         <div className="form-control w-full max-w-xs">
                             <label className="label" htmlFor='displayName'>
                                 <span className="label-text">Full name</span>

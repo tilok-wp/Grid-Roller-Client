@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Product = ({ item }) => {
     const { name, price, img, description, minOrder, available } = item
@@ -11,7 +12,8 @@ const Product = ({ item }) => {
                 <p>{description}</p>
                 <div class="card-actions justify-between items-center">
                     <span>Min order:{minOrder} </span> <span>Avaliable quantiry: {available}</span>
-                    <button class="btn btn-sm btn-primary text-white">Buy Now</button>
+                    <Link to="/purchase" class="btn btn-sm btn-primary text-white">Buy Now</Link>
+                    {/* <button class="btn btn-sm btn-primary text-white">Buy Now</button> */}
                 </div>
             </div>
         </div>
