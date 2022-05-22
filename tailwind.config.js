@@ -7,7 +7,7 @@ module.exports = {
     themes: [
       {
         gridrollertheme: {
-          primary: "#57AC51",
+          primary: "#f76b0a",
           secondary: "#3A8939",
           accent: "#22223b",
           neutral: "#3d4451",
