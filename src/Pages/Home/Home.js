@@ -1,14 +1,14 @@
 import React from 'react';
 import Banner from './Banner';
 import BusinessSummary from './BusinessSummary';
-import Products from './Products';
+import ProductSection from './ProductSection/ProductSection';
 import Reviews from './Reviews';
 
 const Home = () => {
     return (
         <div>
             <Banner></Banner>
-            <Products></Products>
+            <ProductSection></ProductSection>
             <BusinessSummary></BusinessSummary>
             <Reviews></Reviews>
         </div>
