@@ -14,6 +14,7 @@ const Header = () => {
                     <CustomLink to='/'>Home</CustomLink>
                     <CustomLink to='/blogs'>Blogs</CustomLink>
                     <CustomLink to='/contact'>Contact</CustomLink>
+                    <CustomLink to='/my-portfolio'>My Portfolio</CustomLink>
                 </nav>
                 <div className='fixed top-5  right-0 flex items-center md:static z-50'>
                     <Link to='login' className='text-accent font-semibold'>Login</Link>
