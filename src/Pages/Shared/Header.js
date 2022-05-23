@@ -22,12 +22,12 @@ const Header = () => {
                 <nav className={`flex flex-col py-5 md:py-0 md:flex-row absolute text-center md:static w-full md:w-fit bg-green-50 md:bg-transparent duration-500 ease-in ${opener ? 'top-[65px]' : 'top-[-300px]'}`}>
                     <CustomLink to='/'>Home</CustomLink>
                     <CustomLink to='/blogs'>Blogs</CustomLink>
-                    <CustomLink to='/contact'>Contact</CustomLink>
                     <CustomLink to='/my-portfolio'>My Portfolio</CustomLink>
+
                 </nav>
                 <div className='fixed top-5  right-0 flex items-center md:static z-50'>
                     {
-                        user ? <button onClick={signOutHandler} className='text-accent font-semibold'>Sign out </button> : <Link to='/login'><button className='text-accent font-semibold'>Login</button></Link>
+                        user ? <><Link to='/dashboard'><button className='text-accent font-semibold mr-3'>Dashboard</button></Link><button onClick={signOutHandler} className='text-accent font-semibold'>Sign out </button></> : <Link to='/login'><button className='text-accent font-semibold'>Login</button></Link>
                     }
                     <div onClick={() => setOpener(!opener)} className='w-8 h-8 md:hidden ml-1 mr-5'>
                         {opener ? <XIcon /> : <MenuAlt3Icon />}

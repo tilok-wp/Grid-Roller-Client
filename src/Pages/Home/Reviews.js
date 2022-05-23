@@ -2,17 +2,12 @@ import React from 'react';
 
 const Reviews = () => {
     return (
-        <div>
-            <div class="card w-96 bg-base-100 shadow-xl">
-                <div class="card-body">
-                    <h2 class="card-title">Card title!</h2>
-                    <p>If a dog chews shoes whose shoes does he choose?</p>
-                    <div class="card-actions justify-end">
-                        <button class="btn btn-primary">Buy Now</button>
-                    </div>
-                </div>
+        <section className='my-20'>
+            <div className='container mx-auto'>
+                <h2 class="text-3xl font-semibold uppercase mb-10 text-center">Reviews</h2>
+
             </div>
-        </div>
+        </section>
     );
 };
 

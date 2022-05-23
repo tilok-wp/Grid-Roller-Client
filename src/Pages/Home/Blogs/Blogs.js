@@ -1,5 +1,6 @@
 import React from 'react';
 import { useQuery } from 'react-query';
+import PageTitle from '../../../utility/PageTitle';
 import Preloader from '../../Shared/Preloader';
 import Blog from './Blog';
 
@@ -17,6 +18,7 @@ const Blogs = () => {
                     item={item}
                 ></Blog>)}
             </div>
+            <PageTitle title="Blog"></PageTitle>
         </section>
     );
 };

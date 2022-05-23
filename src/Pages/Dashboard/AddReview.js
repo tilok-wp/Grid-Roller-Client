@@ -1,6 +1,6 @@
 import React from 'react';
 
-const BusinessSummary = () => {
+const AddReview = () => {
     return (
         <div>
 
@@ -8,4 +8,4 @@ const BusinessSummary = () => {
     );
 };
 
-export default BusinessSummary;
+export default AddReview;
