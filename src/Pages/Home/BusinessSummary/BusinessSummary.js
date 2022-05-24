@@ -5,7 +5,7 @@ const BusinessSummary = () => {
     return (
         <section className='my-20'>
             <div className='container mx-auto'>
-                <h2 class="text-3xl font-semibold uppercase mb-10 text-center">Business Summary</h2>
+                <h2 className="text-3xl font-semibold uppercase mb-10 text-center">Business Summary</h2>
                 <div className='grid gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-4'>
                     <div className='border border-slate-100 bg-white hover:bg-orange-100 rounded-xl py-10 flex flex-col justify-center items-center'>
                         <UserGroupIcon className="h-14 w-14  text-gray-600 hover:text-primary" />

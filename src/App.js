@@ -16,6 +16,11 @@ import PageNotFound from './Pages/PageNotFound/PageNotFound';
 import Footer from './Pages/Shared/Footer';
 import Header from './Pages/Shared/Header';
 import 'react-toastify/dist/ReactToastify.css';
+import AddBlog from './Pages/Home/Blogs/AddBlog';
+import AddProduct from './Pages/Home/ProductSection/AddProduct';
+import MakeAdmin from './Pages/Dashboard/MakeAdmin';
+import ManageAllProduct from './Pages/Dashboard/ManageAllProduct';
+import ManageAllOrder from './Pages/Dashboard/ManageAllOrder';
 
 function App() {
   return (
@@ -26,15 +31,20 @@ function App() {
         <Route path='/home' element={<Home></Home>}></Route>
         <Route path='/blogs' element={<Blogs></Blogs>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
-        <Route path='/purchase' element={<RequireAuth><Purchase></Purchase></RequireAuth>}></Route>
+        <Route path='/purchase/:id' element={<RequireAuth><Purchase></Purchase></RequireAuth>}></Route>
         <Route path='/signup' element={<SignUp></SignUp>}></Route>
         <Route path='/my-portfolio' element={<MyPortfolio></MyPortfolio>}></Route>
+        <Route path='/add-blog' element={<AddBlog></AddBlog>}></Route>
+        <Route path='/add-product' element={<AddBlog></AddBlog>}></Route>
 
         <Route path='/Dashboard' element={<RequireAuth><Dashboard></Dashboard></RequireAuth>}>
-          <Route index element={<MyOrders></MyOrders>}></Route>
-          <Route path='my-profile' element={<MyProfile></MyProfile>}></Route>
+          <Route index element={<MyProfile></MyProfile>}></Route>
+          <Route path='my-orders' element={<MyOrders></MyOrders>}></Route>
           <Route path='add-review' element={<AddReview></AddReview>}></Route>
-
+          <Route path='add-product' element={<AddProduct></AddProduct>}></Route>
+          <Route path='make-admin' element={<MakeAdmin></MakeAdmin>}></Route>
+          <Route path='manage-products' element={<ManageAllProduct></ManageAllProduct>}></Route>
+          <Route path='manage-all-orders' element={<ManageAllOrder></ManageAllOrder>}></Route>
         </Route>
 
 

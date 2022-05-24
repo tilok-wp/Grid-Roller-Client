@@ -12,8 +12,8 @@ const SupportSection = () => {
     return (
         <section className='py-20' id="contact">
             <div className='container mx-auto text-center'>
-                <h2 class="text-3xl font-semibold uppercase mb-10">Quick contact</h2>
-                <div className='w-1/3 mx-auto'>
+                <h2 className="text-3xl font-semibold uppercase mb-10">Quick contact</h2>
+                <div className='w-full md:w-1/3 mx-auto'>
                     <form onSubmit={handleSubmit(contactSubmit)}>
                         <div className="form-control w-full">
                             <input
@@ -56,7 +56,7 @@ const SupportSection = () => {
                             </label>
                         </div>
                         <div className='form-control w-full mb-5'>
-                            <textarea class="textarea textarea-bordered h-28 resize-none" placeholder="Write message"></textarea>
+                            <textarea className="textarea textarea-bordered h-28 resize-none" placeholder="Write message"></textarea>
                         </div>
 
                         <input type="submit" value='Send' className='btn w-full text-white hover:btn-primary hover:text-white ' />

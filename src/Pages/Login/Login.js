@@ -1,25 +1,30 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { useForm } from "react-hook-form";
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
-import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth'
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth'
 import Preloader from '../Shared/Preloader';
+import useToken from '../../hooks/useToken';
+import { toast } from 'react-toastify';
 
 const Login = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const [signInWithEmailAndPassword, user, userLoading, userError,] = useSignInWithEmailAndPassword(auth);
     const [signInWithGoogle, userGoogle, loadingGoogle, googleError] = useSignInWithGoogle(auth);
+    const refResetEmail = useRef('')
+    const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
 
     const navigate = useNavigate();
     const location = useLocation();
     let from = location.state?.from?.pathname || "/";
 
+    const [token] = useToken(user || userGoogle)
 
     useEffect(() => {
-        if (user || userGoogle) {
+        if (token) {
             navigate(from, { replace: true });
         }
-    }, [user, userGoogle, from, navigate])
+    }, [token, from, navigate])
 
 
     if (userLoading || loadingGoogle) {
@@ -36,6 +41,16 @@ const Login = () => {
         signInWithEmailAndPassword(email, password)
 
     }
+    const passResetHandaller = async () => {
+        const email = refResetEmail.current.value
+        if (email) {
+            sendPasswordResetEmail(email)
+            toast.success('Rest email send. Please check your inbox.');
+        } else {
+            toast.error('Please write valid email.');
+        }
+    }
+
     return (
         <div className='flex justify-center items-center py-20'>
             <div className="card w-96 bg-base-100 shadow-xl">
@@ -50,6 +65,7 @@ const Login = () => {
 
                             <input
                                 type="email"
+                                ref={refResetEmail}
                                 name='email'
                                 placeholder="Write email"
                                 className="input input-bordered w-full max-w-xs"
@@ -104,11 +120,11 @@ const Login = () => {
                     </form>
 
                     {loginErrorMessage}
-
+                    <p className='my-3'>Forgot password? <button onClick={passResetHandaller} className='font-bold' > Reset password</button> </p>
                     <p>Are you new to this portal? <Link className='text-secondary font-bold' to='/signup'>Sign Up</Link></p>
                     <div className="divider">OR</div>
                     <div>
-                        <button onClick={() => signInWithGoogle()} className='btn btn-secondary'>Login with google</button>
+                        <button onClick={() => signInWithGoogle()} className='btn btn-outline btn-secondary w-full'>Login with google</button>
                     </div>
                 </div>
             </div>
