@@ -14,7 +14,7 @@ const MakeAdmin = () => {
     }
     ).then(res => res.json()))
 
-    const makeAdmin = (email) => {
+    const crreateAdmin = (email) => {
         // console.log(email)
         fetch(`http://localhost:5000/user/admin/${email}`, {
             method: 'PUT',
@@ -69,7 +69,7 @@ const MakeAdmin = () => {
                                 key={user._id}
                                 user={user}
                                 index={index}
-                                makeAdmin={makeAdmin}
+                                makeAdmin={crreateAdmin}
                             ></UserRow>)
                         }
                     </tbody>
