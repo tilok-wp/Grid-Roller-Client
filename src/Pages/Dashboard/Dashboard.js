@@ -22,7 +22,7 @@ const Dashboard = () => {
             </div>
             <div className="drawer-side">
                 <label htmlFor="dashboard-menuIcon" className="drawer-overlay"></label>
-                <ul className="menu p-4 overflow-y-auto w-48 bg-base-100 text-base-content">
+                <ul className="menu p-4 overflow-y-auto w-48 bg-base-100 text-base-content bg-slate-100">
                     <h3 className='text-xl font-semibold'>Dashboard</h3>
                     <li><Link to='/dashboard'>My Profile</Link></li>
                     <li><Link to='/dashboard/my-orders'>My orders</Link></li>

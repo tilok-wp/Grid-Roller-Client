@@ -17,10 +17,10 @@ import Footer from './Pages/Shared/Footer';
 import Header from './Pages/Shared/Header';
 import 'react-toastify/dist/ReactToastify.css';
 import AddBlog from './Pages/Home/Blogs/AddBlog';
-import AddProduct from './Pages/Home/ProductSection/AddProduct';
 import MakeAdmin from './Pages/Dashboard/MakeAdmin';
 import ManageAllProduct from './Pages/Dashboard/ManageAllProduct';
 import ManageAllOrder from './Pages/Dashboard/ManageAllOrder';
+import AddProduct from './Pages/Dashboard/AddProduct';
 
 function App() {
   return (
