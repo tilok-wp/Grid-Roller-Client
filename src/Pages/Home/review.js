@@ -1,17 +1,22 @@
 import React from 'react';
 
-const review = () => {
+const Review = ({ item }) => {
+    const { author, description, ratings, photoURL } = item
     return (
-        <div className="card w-96 bg-base-100 shadow-xl">
-            <div className="card-body">
-                <h2 className="card-title">Card title!</h2>
-                <p>If a dog chews shoes whose shoes does he choose?</p>
-                <div className="card-actions justify-end">
-                    <button className="btn btn-primary">Buy Now</button>
+        <div className="card w-full shadow my-5">
+            <div className="flex items-center p-3">
+                <div className='w-36'>
+                    <img className='w-20 rounded-full' src={photoURL} alt="Review" />
+                    <p>Ratings: {ratings}</p>
+                </div>
+                <div>
+                    <h2 className="card-title">{author}</h2>
+                    <p title={description}>{description.slice(0, 70) + '...'}</p>
+
                 </div>
             </div>
         </div>
     );
 };
 
-export default review;
+export default Review;

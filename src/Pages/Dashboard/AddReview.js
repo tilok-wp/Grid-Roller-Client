@@ -12,11 +12,12 @@ const AddReview = () => {
 
 
         const author = user?.displayName || 'Anonymous'
+        const photoURL = user.photoURL || 'https://i.ibb.co/nf1HvkP/blank-profile.jpg'
         const description = data.description
-        const ratings = data.ratings
+        const ratings = parseInt(data.ratings)
 
         const review = {
-            author, description, ratings
+            author, description, ratings, photoURL
         }
         // console.log(blog)
         fetch('http://localhost:5000/review', {
@@ -46,12 +47,6 @@ const AddReview = () => {
             <h1 className="text-3xl font-semibold uppercase mb-10 text-center">Add Review</h1>
             <div className='w-full md:w-1/3 mx-auto'>
                 <form onSubmit={handleSubmit(addReviewOnSubmit)}>
-                    <div className="form-control w-full max-w-xs">
-                        <label className="label" htmlFor='photo'>
-                            <span className="label-text">User photo</span>
-                        </label>
-
-                    </div>
                     <div className="form-control w-full">
                         <input
                             type="text"
@@ -61,7 +56,7 @@ const AddReview = () => {
                             disabled={true}
                         />
                     </div>
-                    <div className="form-control w-full mb-5">
+                    <div className="form-control w-full my-5">
                         <select className="select select-bordered w-full"
                             {...register("ratings", {
                                 required: {

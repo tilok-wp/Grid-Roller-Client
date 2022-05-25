@@ -27,7 +27,7 @@ const Header = () => {
                 </nav>
                 <div className='fixed top-5  right-0 flex items-center md:static z-50'>
                     {
-                        user ? <><Link to='/dashboard'><button className='text-accent font-semibold mr-3'>Dashboard</button></Link><button onClick={signOutHandler} className='text-accent font-semibold'>Sign out </button></> : <Link to='/login'><button className='text-accent font-semibold'>Login</button></Link>
+                        user ? <><Link to='/dashboard'><button className='text-accent font-semibold mr-3'>Dashboard</button></Link><button onClick={signOutHandler} className='text-accent font-semibold'>Sign out <span className='text-sm'>|{user.displayName}</span> </button>  </> : <Link to='/login'><button className='text-accent font-semibold'>Login</button></Link>
                     }
                     <div onClick={() => setOpener(!opener)} className='w-8 h-8 md:hidden ml-1 mr-5'>
                         {opener ? <XIcon /> : <MenuAlt3Icon />}
