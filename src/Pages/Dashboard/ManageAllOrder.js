@@ -7,7 +7,7 @@ import OrderRowAdmin from './OrderRowAdmin';
 const ManageAllOrder = () => {
 
 
-    const { data: allOrders, isLoading, refetch, isError, error } = useQuery('allOrders', () => fetch('http://localhost:5000/order', {
+    const { data: allOrders, isLoading, refetch, isError, error } = useQuery('allOrders', () => fetch('https://hidden-reef-06008.herokuapp.com/order', {
         method: 'GET',
         headers: {
             authorization: `Bearer ${localStorage.getItem('accessToken')}`

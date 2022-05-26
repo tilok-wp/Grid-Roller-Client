@@ -14,7 +14,7 @@ const RowProduct = ({ product, index, setDeleteProduct }) => {
             <td>{available}</td>
             <td>{description.slice(0, 10) + '...'}</td>
             <td>
-                <label onClick={() => setDeleteProduct(product)} for="delete-product-conform-modal" className='btn btn-error p-1 rounded'><TrashIcon className='w-7 h-7 text-white' /></label>
+                <label onClick={() => setDeleteProduct(product)} htmlFor="delete-product-conform-modal" className='btn btn-error p-1 rounded'><TrashIcon className='w-7 h-7 text-white' /></label>
             </td>
 
         </tr>

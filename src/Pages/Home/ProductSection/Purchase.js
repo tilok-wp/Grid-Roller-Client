@@ -34,7 +34,7 @@ const Purchase = () => {
             address,
             city,
             paid: false,
-            shipped: false
+            shipped: false,
         }
         // console.log(orderInfo)
 

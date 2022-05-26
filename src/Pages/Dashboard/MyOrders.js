@@ -1,15 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useQuery } from 'react-query';
 import auth from '../../firebase.init';
+import DeleteMyOrderCancelModal from '../../utility/DeleteMyOrderCancelModal';
 import PageTitle from '../../utility/PageTitle';
 import Preloader from '../Shared/Preloader';
 import OrderRowUser from './OrderRowUser';
 
 const MyOrders = () => {
     const [user] = useAuthState(auth)
+    const [orderCanceling, setOrderCanceling] = useState(null)
 
-    const url = `http://localhost:5000/order/${user.email}`
+    const url = `https://hidden-reef-06008.herokuapp.com/order/${user.email}`
 
     const { data: myOrders, isLoading, refetch, isError, error } = useQuery('myOrders', () => fetch(url, {
         method: 'GET',
@@ -51,6 +53,7 @@ const MyOrders = () => {
                                 key={index}
                                 item={item}
                                 index={index}
+                                setOrderCanceling={setOrderCanceling}
                             ></OrderRowUser>)
                         }
 
@@ -59,7 +62,11 @@ const MyOrders = () => {
                 </table>
             </div>
 
-
+            {orderCanceling && <DeleteMyOrderCancelModal
+                refetch={refetch}
+                orderCanceling={orderCanceling}
+                setOrderCanceling={setOrderCanceling}
+            ></DeleteMyOrderCancelModal>}
             <PageTitle title="My Order"></PageTitle>
         </div>
 
