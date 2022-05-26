@@ -27,13 +27,16 @@ const Purchase = () => {
             productName: name,
             price,
             quantity,
+            totalPrice: price * quantity,
+            customerName,
             email: email,
             phone,
             address,
             city,
-            totalPrice: price * quantity
+            paid: false,
+            shipped: false
         }
-        console.log(orderInfo)
+        // console.log(orderInfo)
 
         fetch('https://hidden-reef-06008.herokuapp.com/order', {
             method: 'POST',
