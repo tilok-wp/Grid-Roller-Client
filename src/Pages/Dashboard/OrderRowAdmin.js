@@ -1,7 +1,7 @@
 import React from 'react';
 
 const OrderRowAdmin = ({ item, index }) => {
-    const { productName, quantity, totalPrice } = item
+    const { _id, productName, quantity, totalPrice, paid, tranID } = item
 
     const setDeleteProduct = (product) => {
         console.log(product)
@@ -12,12 +12,9 @@ const OrderRowAdmin = ({ item, index }) => {
             <td>{productName}</td>
             <td>{quantity}</td>
             <td>{totalPrice}</td>
-            {/* <td>{available}</td>
-            <td>{description.slice(0, 10) + '...'}</td> */}
-            <td>
-                {/* <label onClick={() => setDeleteProduct(product)} htmlFor="delete-product-conform-modal" className='btn btn-error p-1 rounded'><TrashIcon className='w-7 h-7 text-white' /></label> */}
-            </td>
-
+            <td>{tranID}</td>
+            <td>{!paid ? <span className='text-red-500 font-bold'>Unpaid</span> : <span className='text-green-500 font-bold'>Paid</span>}</td>
+            <td>{!paid ? '' : <label htmlFor="order-cancel-modal" className='btn btn-xs'>Shipped</label>}</td>
         </tr>
     );
 };

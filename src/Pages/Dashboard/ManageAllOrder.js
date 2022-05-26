@@ -35,6 +35,7 @@ const ManageAllOrder = () => {
                             <th>Name</th>
                             <th>Quantity</th>
                             <th>Price</th>
+                            <th>TranID</th>
                             <th>Payment</th>
                             <th>Shiping</th>
                         </tr>
