@@ -41,28 +41,28 @@ const MyPortfolio = () => {
             </div >
             <h1 className="text-3xl font-semibold uppercase mt-3 text-center mt-20 mb-10">My projects </h1>
             <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-5">
-                <div class="card w-full bg-base-100 shadow-xl">
+                <div className="card w-full bg-base-100 shadow-xl">
                     <img src="https://i.ibb.co/6vnDsTj/project-1.jpg" alt="Shoes" />
-                    <div class="card-body">
-                        <h2 class="card-title">EIM inventory management</h2>
+                    <div className="card-body">
+                        <h2 className="card-title">EIM inventory management</h2>
                         <p>Easily manage stock collection and updates its stock and delivered information.</p>
 
                         <a href="https://eim-inventory-management.web.app/" target="_blank" className="btn btn-outline btn-primary mt-2"> Live preview</a>
                     </div>
                 </div>
-                <div class="card w-full bg-base-100 shadow-xl">
+                <div className="card w-full bg-base-100 shadow-xl">
                     <img src="https://i.ibb.co/4RVsbm7/project-2.jpg" alt="Shoes" />
-                    <div class="card-body">
-                        <h2 class="card-title">DENTAL PRO</h2>
+                    <div className="card-body">
+                        <h2 className="card-title">DENTAL PRO</h2>
                         <p>Dental pro providing dental services for your's and your family member.</p>
 
                         <a href="https://dentipro-assinment10.web.app/" target="_blank" className="btn btn-outline btn-primary mt-2"> Live preview</a>
                     </div>
                 </div>
-                <div class="card w-full bg-base-100 shadow-xl">
+                <div className="card w-full bg-base-100 shadow-xl">
                     <img src="https://i.ibb.co/gdrPggS/project-3.jpg" alt="Shoes" />
-                    <div class="card-body">
-                        <h2 class="card-title">Clipping path service24 Wordpress site</h2>
+                    <div className="card-body">
+                        <h2 className="card-title">Clipping path service24 Wordpress site</h2>
                         <p>Clipping Path Service 24 is an elite outsourcing  Image Editing online Service.</p>
 
                         <a href="https://clippingpathservice24.com/" target="_blank" className="btn btn-outline btn-primary mt-2"> Live preview</a>

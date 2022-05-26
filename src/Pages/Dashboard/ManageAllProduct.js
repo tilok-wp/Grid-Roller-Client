@@ -45,7 +45,6 @@ const ManageAllProduct = () => {
                                 key={product._id}
                                 product={product}
                                 index={index}
-                                refetch={refetch}
                                 setDeleteProduct={setDeleteProduct}
 
                             ></RowProduct>)

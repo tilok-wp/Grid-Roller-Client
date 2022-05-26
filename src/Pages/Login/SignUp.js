@@ -43,7 +43,7 @@ const SignUp = () => {
                 <div className="card-body">
                     <h2 className="text-3xl text-center font-bold">Login </h2>
                     <form onSubmit={handleSubmit(signupSubmit)}>
-                        <div className="form-control w-full max-w-xs">
+                        <div className="form-control w-full">
                             <label className="label" htmlFor='displayName'>
                                 <span className="label-text">Full name</span>
                             </label>
@@ -52,7 +52,7 @@ const SignUp = () => {
                                 type="displayName"
                                 name='displayName'
                                 placeholder="Write Full name"
-                                className="input input-bordered w-full max-w-xs"
+                                className="input input-bordered w-full"
                                 {...register("displayName", {
                                     required: {
                                         value: true,
@@ -65,7 +65,7 @@ const SignUp = () => {
 
                             </label>
                         </div>
-                        <div className="form-control w-full max-w-xs">
+                        <div className="form-control w-full">
                             <label className="label" htmlFor='email'>
                                 <span className="label-text">Email</span>
                             </label>
@@ -74,7 +74,7 @@ const SignUp = () => {
                                 type="email"
                                 name='email'
                                 placeholder="Write email"
-                                className="input input-bordered w-full max-w-xs"
+                                className="input input-bordered w-full"
                                 {...register("email", {
                                     required: {
                                         value: true,
@@ -92,7 +92,7 @@ const SignUp = () => {
 
                             </label>
                         </div>
-                        <div className="form-control w-full max-w-xs">
+                        <div className="form-control w-full">
                             <label className="label" htmlFor='password'>
                                 <span className="label-text">Password</span>
                             </label>
@@ -101,7 +101,7 @@ const SignUp = () => {
                                 type="password"
                                 name='password'
                                 placeholder="Write password"
-                                className="input input-bordered w-full max-w-xs"
+                                className="input input-bordered w-full"
                                 {...register("password", {
                                     required: {
                                         value: true,
@@ -122,7 +122,7 @@ const SignUp = () => {
 
 
 
-                        <input type="submit" value='Sign up' className='btn w-full max-w-xs btn-primary text-white' />
+                        <input type="submit" value='Sign up' className='btn w-full btn-primary text-white' />
                     </form>
                     {sigUpError}
 
