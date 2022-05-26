@@ -3,7 +3,7 @@ import React from 'react';
 const Review = ({ item }) => {
     const { author, description, ratings, photoURL } = item
     return (
-        <div className="card w-full shadow my-5">
+        <div className="card w-full shadow my-5 carousel-item relative">
             <div className="flex items-center p-3">
                 <div className='w-36'>
                     <img className='w-20 rounded-full' src={photoURL} alt="Review" />

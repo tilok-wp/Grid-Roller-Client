@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useQuery } from 'react-query';
+import DeleteProductConform from '../../utility/DeleteProductConform';
 import PageTitle from '../../utility/PageTitle';
 import Preloader from '../Shared/Preloader';
 import RowProduct from './RowProduct';
 
 const ManageAllProduct = () => {
+    const [deleteProduct, setDeleteProduct] = useState(null)
     const { data: products, isLoading, refetch, isError, error } = useQuery('products', () => fetch('http://localhost:5000/product', {
         headers: {
             authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -21,8 +23,6 @@ const ManageAllProduct = () => {
     return (
         <div className='py-20 px-3 container mx-auto'>
             <h1 className="text-3xl font-semibold uppercase mb-10 text-center">Manage Products {products.length}</h1>
-
-
             <div className="overflow-x-auto">
                 <table className="table w-full">
 
@@ -45,13 +45,19 @@ const ManageAllProduct = () => {
                                 key={product._id}
                                 product={product}
                                 index={index}
+                                refetch={refetch}
+                                setDeleteProduct={setDeleteProduct}
 
                             ></RowProduct>)
                         }
                     </tbody>
                 </table>
             </div>
-
+            {deleteProduct && <DeleteProductConform
+                deleteProduct={deleteProduct}
+                setDeleteProduct={setDeleteProduct}
+                refetch={refetch}
+            ></DeleteProductConform>}
             <PageTitle title="Manage Products"></PageTitle>
         </div>
     );
