@@ -6,7 +6,7 @@ import Preloader from '../../Shared/Preloader';
 import Blog from './Blog';
 
 const Blogs = () => {
-    const { data: blogs, isLoading, isError, error } = useQuery('blogs', () => fetch('http://localhost:5000/blog').then(res => res.json()))
+    const { data: blogs, isLoading, isError, error } = useQuery('blogs', () => fetch('https://hidden-reef-06008.herokuapp.com/blog').then(res => res.json()))
     if (isLoading) {
         return <Preloader />
     }

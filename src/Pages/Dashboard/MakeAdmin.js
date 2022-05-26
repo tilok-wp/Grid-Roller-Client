@@ -6,7 +6,7 @@ import Preloader from '../Shared/Preloader';
 import UserRow from './UserRow';
 
 const MakeAdmin = () => {
-    const { data: users, isLoading, refetch, isError, error } = useQuery('users', () => fetch('http://localhost:5000/user', {
+    const { data: users, isLoading, refetch, isError, error } = useQuery('users', () => fetch('https://hidden-reef-06008.herokuapp.com/user', {
         method: 'GET',
         headers: {
             authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -16,7 +16,7 @@ const MakeAdmin = () => {
 
     const crreateAdmin = (email) => {
         // console.log(email)
-        fetch(`http://localhost:5000/user/admin/${email}`, {
+        fetch(`https://hidden-reef-06008.herokuapp.com/user/admin/${email}`, {
             method: 'PUT',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`

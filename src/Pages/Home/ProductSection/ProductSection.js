@@ -5,7 +5,7 @@ import Preloader from '../../Shared/Preloader';
 import Product from './Product';
 
 const ProductSection = () => {
-    const { data: products, isLoading, isError, error } = useQuery('products', () => fetch(`http://localhost:5000/product?limit=6`).then(res => res.json()))
+    const { data: products, isLoading, isError, error } = useQuery('products', () => fetch(`https://hidden-reef-06008.herokuapp.com/product?limit=6`).then(res => res.json()))
     const navigate = useNavigate()
 
     if (isLoading) {

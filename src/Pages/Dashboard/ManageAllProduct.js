@@ -7,7 +7,7 @@ import RowProduct from './RowProduct';
 
 const ManageAllProduct = () => {
     const [deleteProduct, setDeleteProduct] = useState(null)
-    const { data: products, isLoading, refetch, isError, error } = useQuery('products', () => fetch('http://localhost:5000/product', {
+    const { data: products, isLoading, refetch, isError, error } = useQuery('products', () => fetch('https://hidden-reef-06008.herokuapp.com/product', {
         headers: {
             authorization: `Bearer ${localStorage.getItem('accessToken')}`
         }

@@ -4,7 +4,7 @@ const useUserDetail = email => {
     const [userDetail, setUserDetail] = useState({});
 
     useEffect(() => {
-        const url = `http://localhost:5000/user/${email}`
+        const url = `https://hidden-reef-06008.herokuapp.com/user/${email}`
         fetch(url, {
             method: 'GET',
             headers: {

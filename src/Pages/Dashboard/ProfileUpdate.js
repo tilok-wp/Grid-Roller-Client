@@ -42,7 +42,7 @@ const ProfileUpdate = () => {
 
                     const updateInformation = { displayName, phone, address, city, education, linkedIn, github, imageLink }
 
-                    const urlUpdate = `http://localhost:5000/user/update/${user.email}`
+                    const urlUpdate = `https://hidden-reef-06008.herokuapp.com/user/update/${user.email}`
                     fetch(urlUpdate, {
                         method: 'PUT',
                         headers: {

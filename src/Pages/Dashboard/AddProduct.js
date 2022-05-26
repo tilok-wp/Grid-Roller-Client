@@ -33,7 +33,7 @@ const AddProduct = () => {
                         name, description, minOrder, available, img: imageLink,
                     }
                     // console.log(product)
-                    fetch('http://localhost:5000/product', {
+                    fetch('https://hidden-reef-06008.herokuapp.com/product', {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json'

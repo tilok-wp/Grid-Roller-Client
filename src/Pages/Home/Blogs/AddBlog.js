@@ -31,7 +31,7 @@ const AddBlog = () => {
                         heading, description, img: imageLink
                     }
                     // console.log(blog)
-                    fetch('http://localhost:5000/blog', {
+                    fetch('https://hidden-reef-06008.herokuapp.com/blog', {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json'

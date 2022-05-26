@@ -7,7 +7,7 @@ const useToken = user => {
         // console.log(email)
         const newUser = { email: email };
         if (email) {
-            const url = `http://localhost:5000/user/${email}`
+            const url = `https://hidden-reef-06008.herokuapp.com/user/${email}`
             fetch(url, {
                 method: 'PUT',
                 headers: {

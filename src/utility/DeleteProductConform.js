@@ -4,7 +4,7 @@ import { toast } from 'react-toastify';
 const DeleteProductConform = ({ deleteProduct, setDeleteProduct, refetch }) => {
     const { _id, name } = deleteProduct
     const handelDelete = () => {
-        const url = `http://localhost:5000/product/${_id}`
+        const url = `https://hidden-reef-06008.herokuapp.com/product/${_id}`
         fetch(url, {
             method: 'DELETE',
             headers: {

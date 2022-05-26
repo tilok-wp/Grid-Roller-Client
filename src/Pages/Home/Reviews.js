@@ -4,7 +4,7 @@ import Preloader from '../Shared/Preloader';
 import Review from './Review';
 
 const Reviews = () => {
-    const { data: reviews, isLoading, isError, error } = useQuery('reviews', () => fetch(`http://localhost:5000/review`).then(res => res.json()))
+    const { data: reviews, isLoading, isError, error } = useQuery('reviews', () => fetch(`https://hidden-reef-06008.herokuapp.com/review`).then(res => res.json()))
 
     if (isLoading) {
         return <Preloader></Preloader>
