@@ -12,11 +12,18 @@ Best quality painting ROLLER manufacturer
 
 ## Application Features:
 
-- Modern and clean view
+- Grid roller is the responsive web application. 
+- These app users can create account,
+- Edit profile, 
+- Order place with payment, 
+- Manage orders 
+- review.
+- Order lot quantity (Min but not over available)
+##Admin Can 
 - Add product
 - Delete product
-- Login authentication and authorization
-- Order lot quantity (Min but not over available)
+- Manage all orders
+- Manage admin and user
 - Dashboard
 
 ## Frameworks and libraries use in this App For front-end client side
